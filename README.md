@@ -15,11 +15,12 @@ Using deep learning model to generate Harry Potter-liked stories . Given a seque
 * Gensim Word2Vec model
 * Read the word vectors trained by gensim and prepare an embedding matrix for the initialization of Embedding layer.
 
-#### LSTM deep learning model
+#### [LSTM deep learning model](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
 Define a deep learning sequential model with one embedding layer initialized by the word vectors pre-trained by gensim, two LSTM layers with 256 memory cells, one dropout layer with dropout rate 0.2, one dense layer with 256 neurons and relu activation, another dropout layer with dropout rate 0.2, and one output dense layer with 7731 neurons and softmax activation.
 
 ![LSTM](images/LSTM3-chain.png)
+
 #### Stochastic sampling
 
 Stochastic sampling introduces randomness in the sampling process, by sampling from the probability distribution for the next word. In order to control the amount of stochasticity in the sampling process, a parameter called the softmax temperature that characterizes the entropy of the probability distribution is introduced. Given a temperature value, a new probability distribution is computed from the predicted probability distribution of the model. Higher temperature results in higher entropy of the new probability distribution and generates more creative text data. On the contrary, lower temperature results in less randomness of the distribution and generates much more predictable data.
